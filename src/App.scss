@@ -1,0 +1,402 @@
+$body-color: #222;
+$input-color: #222;
+$theme-gradient: linear-gradient(#2252e5, #01afee);
+$primary: #0031b0;
+$secondary: #2e2d2d;
+$gray: #c4c4c4;
+$orange: #ff6e07;
+$body-bg: #f5f7fa;
+
+$gray-100: #f7f7f7;
+$gray-200: #f1f1f1;
+$gray-300: #e9e9e9;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  background: #fff;
+  overflow: hidden;
+}
+.noDataAlert{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: #3a4960;
+  opacity: 0.7;
+  margin-top: 2rem;
+  position: relative;
+  left: 126%;
+}
+.main-container {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  background: #fff;
+  width: 100%;
+  height: 600px;
+}
+.component-container {
+  // margin-top: 1rem;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  margin-top:1rem;
+  // position: relative;
+  // top: 5%;
+  // margin-top: 5vh;
+  margin-left: 20px;
+}
+// .right-box { // old imita
+//   // background-color: rgb(250, 251, 252);
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 80%;
+//   margin-top: 20px;
+//   // padding: 0px 20px;
+// }
+
+.right-box {
+  width: 80%;
+  height: 100vh;
+  margin-top: 20px;
+  // overflow-y: hidden;
+  // overflow-x: hidden;
+  overflow: hidden;
+  padding-right: 10px;
+  
+}
+
+.table {
+  // width: 1070px;
+  width: 100%;
+  // height:300px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin-bottom: 30px;
+}
+.change-style {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#user-logo {
+  margin-right: 5px;
+  width: 20px;
+}
+.header {
+  width: 100%;
+  font-family: Inter;
+  font-style: normal;
+  line-height: 29px;
+  color: #3a4960;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  letter-spacing: 1.2px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  span {
+    margin-right: 150px;
+  }
+}
+
+thead {
+  tr {
+    th {
+      min-width: 60px;
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #3a4960;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      padding-right: 5px;
+      
+    }
+  }
+}
+
+tbody {
+  max-height: 400px;
+  overflow-y: scroll !important;
+  tr {
+    td {
+      min-width: 60px;
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-right: 5px;
+    }
+    .name-td {
+      cursor: pointer;
+      max-width: 200px;
+      font-weight: 500;
+      font-size: 0.9rem;
+     
+    }
+  }
+}
+
+.td-padding {
+  padding-left: 25px;
+  box-sizing: border-box;
+}
+.cursor {
+  cursor: pointer;
+}
+.overlay {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // background-color: rgba(128, 128, 128, 0.4);
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+  // background: #fafbfc;
+}
+
+.left-box {
+  width: 20%;
+  // height: auto;
+  height: 100vh;
+  background: #f4f7f8;
+  box-shadow: 0px 4px 4px #d4e2f4;
+  margin-bottom: 113px;
+  
+  z-index: 2;
+}
+.footer {
+  bottom: 0;
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-end;
+  // margin-right: 10px;
+  // margin-bottom: 50px;
+  p {
+    color: #5078f2;
+    margin-right: 10px;
+    padding-top: 10px;
+  }
+}
+
+.toTop {
+  // position: fixed;
+  //   display: inline;
+  //   left: 95%;
+  //   top: 90%;
+    height:40px;
+    // bottom: 0;
+    margin: 20px;
+    font-size: 1.5rem;
+    background: rgb(144, 192, 224);
+    padding: 5px 10px;
+    color: #fff;
+}
+.table thead th{
+  border-bottom: none;
+}
+button:focus{
+  background-color: none !important;
+}
+.table td, .table th {
+  border-top: none;
+}
+.map-type-control {
+  position: absolute;
+  bottom: 3rem;
+  left: 0rem;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.21);
+
+  .controls {
+    flex-wrap: nowrap;
+    display: flex;
+
+    .btn-group {
+      & > button:first-child {
+        border-right: 1px solid $gray-300;
+      }
+
+      width: 0;
+      overflow: hidden;
+      transition: width 0.2s ease;
+
+      button {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &:hover {
+    .btn-group {
+      width: 11rem;
+    }
+  }
+
+  button {
+    background-color: #fff;
+    color: $body-color;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+  }
+
+  & > button {
+    padding: 0.5rem;
+    // opacity: 0.75;
+  }
+}
+.map-container {
+  position: relative;
+	.form-group {
+		position: absolute;
+		top: 1rem;
+		z-index: 999;
+		left: 1rem;
+		width: 50%;
+
+		.form-control {
+			border-radius: 0;
+			box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25) !important;
+			border: 0;
+		}
+	}
+
+	.info {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		left: 0;
+		z-index: 1;
+
+		.d-flex {
+			justify-content: center;
+			align-items: center;
+
+			.card-body {
+				padding: 0.875rem 1rem;
+				color: $primary;
+			}
+		}
+	}
+
+	> div {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.reset-bound {
+		position: absolute;
+		z-index: 99;
+		right: 0.75rem;
+		top: 4.5rem;
+		width: 40px;
+		height: 40px;
+		display: block;
+		overflow: hidden;
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+		background-color: #fff;
+		border: none;
+		border-radius: 2px;
+		font-size: 2rem;
+		line-height: 1.2;
+		outline: 0;
+	}
+
+	.map-type-control {
+		position: absolute;
+		bottom: 3rem;
+		left: 0rem;
+		z-index: 99;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.21);
+
+		.controls {
+			flex-wrap: nowrap;
+			display: flex;
+
+			.btn-group {
+				& > button:first-child {
+					border-right: 1px solid $gray-300;
+				}
+
+				width: 0;
+				overflow: hidden;
+				transition: width 0.2s ease;
+
+				button {
+					flex-grow: 1;
+				}
+			}
+		}
+
+		&:hover {
+			.btn-group {
+				width: 11rem;
+			}
+		}
+
+		button {
+			background-color: #fff;
+			color: $body-color;
+			border: 0;
+			outline: 0;
+			padding: 0.5rem 1.25rem;
+			font-weight: 600;
+		}
+
+		& > button {
+			padding: 0.5rem;
+			// opacity: 0.75;
+		}
+	}
+}
+
+.map-estimation {
+	margin-bottom: 1rem;
+	width: 100% !important;
+	.form-control {
+		line-height: 2;
+	}
+}
+
+.map-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 1.5rem;
+
+	i {
+		vertical-align: -2px;
+	}
+}
+

@@ -1,0 +1,89 @@
+.login-form-container {
+  display: flex;
+}
+
+.login-wrapper {
+  height: 100%;
+  width: 50%;
+  .logo {
+    margin-bottom: 16%;
+    font-size: 32px;
+    .garuda-logo{
+      width: 60px;
+      height: 60px;
+      cursor: none;
+    }
+  }
+  
+  .form {
+    .title {
+      font-size: 2.8rem;
+    }
+    .textInput {
+      margin-bottom: 20px;
+      width: 50%;
+      border: unset;
+      outline: none;
+      border-bottom: 2px solid #5078f2;
+      &:hover {
+        border-bottom: 2px solid #a3b7f3;
+      }
+    }
+    .goto {
+      width: 100%;
+      text-align: right;
+      color: #5078f2;
+      margin-top: 15px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: #5078f2;
+      }
+      &:focus {
+        color: #5078f2 !important ;
+        background-color: rgb(104, 152, 224) ;
+        border: 1px solid #5078f2 ;
+      }
+    }
+  }
+}
+
+button {
+  width: 350px;
+  height: 40px;
+  background-color: #5078f2;
+  outline: none;
+  border: none;
+  color: #fff ;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 15px !important;
+  &:hover {
+    color: #5078f2 !important ;
+    background-color: rgb(142, 156, 240) !important;
+    border: 1px solid #5078f2 !important;
+  }
+
+ 
+}
+
+.login-button{
+    font-size: 1.2rem;
+    width: 20%;
+    background-color: #87a2f1 !important;
+    border: 1px solid #5078f2 ;
+  &:focus {
+    color: #5078f2 !important ;
+    background-color: rgb(104, 152, 224) ;
+    border: 1px solid #5078f2 ;
+  }
+  &:hover {
+    color: #fff !important;
+    background-color: rgb(101, 149, 221) !important;
+    border: 1px solid #5078f2 !important;
+  }
+}
+
+.radioUserType {
+  margin-top: 20px !important;
+}

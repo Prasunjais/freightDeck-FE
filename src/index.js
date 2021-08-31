@@ -1,20 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './routes';
-import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
-import { store } from './helpers';
-import 'react-notifications/lib/notifications.css';
-import './assets/scss/index.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import reducers from "./reducer";
+import thunk from "redux-thunk";
+import App from "./App";
+import history from "./history";
+
+let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+let store = createStoreWithMiddleware(reducers);
+
+if (process.env.NODE_ENV !== "production") {
+  store = createStoreWithMiddleware(
+    reducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
+}
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Routes />
-  </Provider>,
-  document.getElementById('root'),
+  <React.StrictMode>
+    <Provider store={store}>
+      <Router history={history}>
+        <App />
+      </Router>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
